@@ -21,6 +21,24 @@ function rotateBy90AntiClockWiseWithoutSpace(a, N) {
     printMatrix(a, N);
 }
 
+function rotateBy90usingTranspose(a, N) {
+    // Reverse evry 
+    for (let i = 0; i < N; i++)
+        a[i] = [...a[i]].reverse();
+
+    // Find transpose of matrix 
+    for (let i = 0; i < N; i++) {
+        for (let j = i; j < N; j++) {
+            let temp = a[i][j];
+            a[i][j] = a[j][i];
+            a[j][i] = temp;
+        }
+    }
+    document.write("<br/> Without Using additional space <br/>")
+    printMatrix(a, N);
+
+}
+
 // Using M*N additional space
 function rotateBy90WithSpace(a, rows) {
     // Space O(m*n) space
@@ -41,6 +59,12 @@ let a = [
 ];
 rotateBy90WithSpace(a, N);
 rotateBy90AntiClockWiseWithoutSpace(a, N);
+let b = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+rotateBy90usingTranspose(b, N);
 // let mat = [
 //     [1, 2, 3, 4],
 //     [5, 6, 7, 8],
