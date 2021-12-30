@@ -1,4 +1,4 @@
-function printSpiral(n) {
+function printSpiralWithExtraSpace(n) {
     let temp = new Array(n).fill().map(() => new Array(n).fill(0));
 
     let count = n * n;
@@ -39,4 +39,4 @@ function printSpiral(n) {
 
 }
 let n = 5;
-printSpiral(n);
+printSpiralWithExtraSpace(n);
